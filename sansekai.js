@@ -62,7 +62,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
               apiKey: setting.keyopenai, 
             });
             const openai = new OpenAIApi(configuration);
-
+            
             const response = await openai.createCompletion({
               model: "text-davinci-003",
               prompt: budy,
@@ -75,7 +75,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
             m.reply(`${response.data.choices[0].text}\n\n`)
             } catch(err) {
                 console.log(err)
-                m.reply('I apologize, sir, but an error has occurred. Please ask another question until Rishabh sir adds new features.')
+                m.reply('Maaf, sepertinya ada yang error')
             }
         }
     }
@@ -104,7 +104,7 @@ module.exports = sansekai = async (client, m, chatUpdate, store) => {
                         m.reply(`${response.data.choices[0].text}\n\n`)
                     } catch (err) {
                         console.log(err)
-                        m.reply('I apologize, sir, but an error has occurred. Please ask another question until Rishabh sir adds new features.')
+                        m.reply('Maaf, sepertinya ada yang error')
                     }
                     break
                 default:{
